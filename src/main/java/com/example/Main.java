@@ -22,11 +22,12 @@ public class Main {
 
         VehicleDisplayStrategy vehicleDisplayStrategy = new MinimumCostVehicleDisplayStrategy();
         VehicleSelectionStrategy vehicleSelectionStrategy = new MinimumCostVehicleSelectionStrategy();
-        VehiclePricingStrategy vehiclePricingStrategy = new DefaultVehiclePricingStrategy();
+//        VehiclePricingStrategy vehiclePricingStrategy = new DefaultVehiclePricingStrategy();
+        VehiclePricingSelector vehiclePricingSelector = new VehiclePricingSelector();
 
         UserDatabase userDatabase = new UserDatabase();
         BranchDatabase branchDatabase = new BranchDatabase(vehicleDisplayStrategy);
-        BookingDatabase bookingDatabase = new BookingDatabase(branchDatabase, vehicleSelectionStrategy, vehiclePricingStrategy);
+        BookingDatabase bookingDatabase = new BookingDatabase(branchDatabase, vehicleSelectionStrategy, vehiclePricingSelector);
 
         BranchManagementController branchManagementController = new BranchManagementController(branchDatabase);
         UserManagementController userManagementController = new UserManagementController(userDatabase, bookingDatabase);

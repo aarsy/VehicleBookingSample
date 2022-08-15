@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Branch{
     private String branchName;
+    // Map from vehicleType to List of Vehicles
     private Map<String, Set<Vehicle>> vehicles;
 
     public Branch(String branchName, List<String> vehicleTypes){
@@ -53,6 +54,8 @@ public class Branch{
     public int getVehicleCount(String vehicleType){
         return vehicles.get(vehicleType).size();
     }
+
+
 
 
 

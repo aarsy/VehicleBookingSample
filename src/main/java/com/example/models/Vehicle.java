@@ -1,14 +1,14 @@
 package com.example.models;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 
 public class Vehicle{
     private String vehicleType;
     private String vehicleId;
     private VehicleStatus status;
-    private List<BookingTimeSlot> bookedSlots;
+    private Set<BookingTimeSlot> bookedSlots;
     private Double price;
 
     public Vehicle(String vehicleType, String vehicleId, Double price){
@@ -16,7 +16,7 @@ public class Vehicle{
         this.vehicleId = vehicleId;
         this.price = price;
         this.status = VehicleStatus.VACANT;
-        this.bookedSlots = new ArrayList<>();
+        this.bookedSlots = new TreeSet<>();
     }
 
     public String getVehicleType(){
@@ -35,11 +35,11 @@ public class Vehicle{
         return status;
     }
 
-    public List<BookingTimeSlot> getBookedSlots() {
+    public Set<BookingTimeSlot> getBookedSlots() {
         return bookedSlots;
     }
 
-    public void setBookedSlots(List<BookingTimeSlot> bookedSlots) {
+    public void setBookedSlots(Set<BookingTimeSlot> bookedSlots) {
         this.bookedSlots = bookedSlots;
     }
 

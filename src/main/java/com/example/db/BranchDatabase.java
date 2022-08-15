@@ -19,6 +19,9 @@ public class BranchDatabase {
         return branches.containsKey(branchName);
     }
 
+    /***
+     * Create a new vehicle in branch in DB
+     * ***/
     public boolean createNewBranch(final Branch newBranch){
         if(isBranchExists(newBranch.getBranchName()))
             return false;
@@ -30,12 +33,22 @@ public class BranchDatabase {
         return branches.getOrDefault(branchName, null);
     }
 
+
+    /***
+     * Onboard a new vehicle in branch
+     * ***/
     public boolean createVehicle(Branch branch, Vehicle vehicle) {
         if(branch == null || !branch.isVehicleTypeSupported(vehicle.getVehicleType()) || branch.isVehicleAlreadyExists(vehicle))
             return false;
         branch.addNewVehicle(vehicle);
         return true;
     }
+
+    /***
+     * Given all vehicles fine available vehicles for the given time slot
+     * @param vehicles All vehicles
+     * @param searchTimeSlot given time slot
+     * ***/
 
     private List<Vehicle> availableVehicles(Set<Vehicle> vehicles, BookingTimeSlot searchTimeSlot){
         List<Vehicle> availableVehicles = new ArrayList<>();
