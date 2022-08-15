@@ -51,7 +51,7 @@ public class VehicleRentalApplication {
                 }
                 case "BOOK": {
                     double result = userManagementController.bookVehicle(userId, nextCmd[1], nextCmd[2], Long.parseLong(nextCmd[3]), Long.parseLong(nextCmd[4]));
-                    System.out.println(result);
+                    System.out.println((long)result);
                     break;
                 }
                 case "DISPLAY_VEHICLES": {
