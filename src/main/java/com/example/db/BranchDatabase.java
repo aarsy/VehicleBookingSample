@@ -8,6 +8,7 @@ import com.example.strategies.VehicleDisplayStrategy;
 import java.util.*;
 
 public class BranchDatabase {
+    // Map from branchID to branch object
     Map<String, Branch> branches = new HashMap<>();
     private VehicleDisplayStrategy vehicleDisplayStrategy;
 
@@ -71,11 +72,11 @@ public class BranchDatabase {
     }
 
     public List<Vehicle> getAvailableVehiclesForVehicleType(Branch branch, String vehicleType, BookingTimeSlot newBookingSlot){
-        return availableVehicles(branch.getAllAvailableVehiclesForVehicleType(vehicleType), newBookingSlot);
+        return availableVehicles(branch.getAllVehiclesForVehicleType(vehicleType), newBookingSlot);
     }
 
     public List<Vehicle> getAvailableVehicles(Branch branch, BookingTimeSlot newBookingSlot){
-        return availableVehicles(branch.getAllAvailableVehicles(), newBookingSlot);
+        return availableVehicles(branch.getAllVehicles(), newBookingSlot);
     }
 
     public List<Vehicle> displayVehicles(Branch branch, BookingTimeSlot betweenTimeSlot){

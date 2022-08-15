@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserDatabase {
+    // Map from UserId to User object
     Map<String, User> users = new HashMap<>();
 
     public boolean createUser(User newUser) {

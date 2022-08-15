@@ -14,6 +14,7 @@ public class BookingDatabase {
     private BranchDatabase branchDatabase;
     private VehicleSelectionStrategy vehicleSelectionStrategy;
     private VehiclePricingSelector vehiclePricingSelector;
+    // Map from UserID to List of bookings for that user
     private Map<String, List<Booking>> bookings = new HashMap<>();
 
     public BookingDatabase(BranchDatabase branchDatabase,

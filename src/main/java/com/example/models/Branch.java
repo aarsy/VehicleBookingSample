@@ -31,15 +31,11 @@ public class Branch{
         return false;
     }
 
-    public Map<String, Set<Vehicle>> getAllVehicles(){
-        return vehicles;
-    }
-
-    public Set<Vehicle> getAllAvailableVehiclesForVehicleType(String vehicleType){
+    public Set<Vehicle> getAllVehiclesForVehicleType(String vehicleType){
         return vehicles.get(vehicleType);
     }
 
-    public Set<Vehicle> getAllAvailableVehicles(){
+    public Set<Vehicle> getAllVehicles(){
         Set<Vehicle> allVehicles = new HashSet<>();
         for(Set<Vehicle> typevehicles : vehicles.values()){
             allVehicles.addAll(typevehicles);
@@ -54,10 +50,6 @@ public class Branch{
     public int getVehicleCount(String vehicleType){
         return vehicles.get(vehicleType).size();
     }
-
-
-
-
 
     @Override
     public boolean equals(Object obj) {
