@@ -31,10 +31,7 @@ public class VehicleRentalApplication {
         //Onboard a user
         String userId = UUID.randomUUID().toString();
         String userName = "Abhay";
-        if(userManagementController.registerUser(userId, userName)){
-            System.out.println("User " + userName + "(" + userId + ") is successfully registered");
-        }
-
+        userManagementController.registerUser(userId, userName);
 
         File file = new File(args[0]);
         Scanner sc = new Scanner(file);
