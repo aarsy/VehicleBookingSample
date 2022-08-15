@@ -57,7 +57,6 @@ public class TestDatabases {
 
     @Test
     void testBranchDatabase(){
-
         String branchName1 = "B1";
         String vehicleTypes1 = "CAR,BIKE";
         String branchName2 = "B2";

@@ -17,10 +17,16 @@ public class UserManagementController {
         this.bookingDatabase = bookingDatabase;
     }
 
+    /***
+     * Register new user
+     * ***/
     public boolean registerUser(String userId, String userName){
         return userDatabase.createUser(new User(userId, userName));
     }
 
+    /***
+     * Book a vehicle for the user
+     * ***/
     public Double bookVehicle(String userId, String branchName, String vehicleType, long fromTime, long toTime){
         return bookingDatabase.bookVehicle(userDatabase.getUser(userId), branchName, vehicleType, new BookingTimeSlot(fromTime, toTime));
     }

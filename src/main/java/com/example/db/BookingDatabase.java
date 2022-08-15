@@ -38,6 +38,7 @@ public class BookingDatabase {
         if(vehicle == null)
             return (double) -1;
         vehicle.reserveSlot(newBookingSlot);
+        /* Select the pricing strategy from Default strategy and Dynamic strategy for surcharge*/
         Double price = vehiclePricingSelector.getVehiclePricingStrategy(vehicleType, totalVehiclesCount, availableVehicles.size())
                                             .findPrice(vehicle, newBookingSlot);
         final Booking booking = new Booking(user, bookingBranch, vehicle, price, newBookingSlot);

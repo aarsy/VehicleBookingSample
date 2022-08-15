@@ -10,10 +10,8 @@ import com.example.strategies.*;
 import java.io.File;
 import java.util.*;
 
-public class Main {
+public class VehicleRentalApplication {
     public static void main(String args[]) throws Exception{
-        System.out.println("Abhay raffj singh");
-        System.out.println(args.length +" " + args[0]);
         if(args.length == 0){
             throw new IllegalArgumentException("Provide input file as command line argument ");
         }
@@ -42,7 +40,6 @@ public class Main {
         Scanner sc = new Scanner(file);
         while (sc.hasNextLine()) {
             String command = sc.nextLine();
-            System.out.println(command);
             String[] nextCmd =command.split(" ");
             switch (nextCmd[0]){
                 case "ADD_BRANCH": {

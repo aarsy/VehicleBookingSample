@@ -117,28 +117,6 @@ public class TestBookingFlow {
         String vehicleTypes = "CAR,BIKE,VAN";
 
         branchManagementController.createBranch(branchName1, Arrays.asList(vehicleTypes.split(",")));
-//        BOOK B1 VAN 1 5
-//        -1.0
-//        BOOK B1 CAR 1 3
-//        1000.0
-//        BOOK B1 CAR 1 3
-//        1600.0
-//        BOOK B1 CAR 1 3
-//        1600.0
-//        BOOK B1 CAR 1 3
-//        1600.0
-//        BOOK B1 CAR 1 3
-//        1600.0
-//        BOOK B1 CAR 1 3
-//        1600.0
-//        BOOK B1 CAR 1 3
-//        Pricing 1000.0  0.1
-//        2200.0
-//        BOOK B1 BIKE 2 3
-//        250.0
-//        BOOK B1 BIKE 2 5
-//        900.0
-//        DISPLAY_VEHICLES B1 1 5
 
         branchManagementController.onboardVehicle(branchName1, "CAR", "V1", 500d);
         branchManagementController.onboardVehicle(branchName1, "CAR", "V2", 1000d);
