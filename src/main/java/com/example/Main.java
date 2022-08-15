@@ -5,7 +5,6 @@ import com.example.controllers.UserManagementController;
 import com.example.db.BookingDatabase;
 import com.example.db.BranchDatabase;
 import com.example.db.UserDatabase;
-import com.example.models.Vehicle;
 import com.example.strategies.*;
 
 import java.io.File;
@@ -22,7 +21,6 @@ public class Main {
 
         VehicleDisplayStrategy vehicleDisplayStrategy = new MinimumCostVehicleDisplayStrategy();
         VehicleSelectionStrategy vehicleSelectionStrategy = new MinimumCostVehicleSelectionStrategy();
-//        VehiclePricingStrategy vehiclePricingStrategy = new DefaultVehiclePricingStrategy();
         VehiclePricingSelector vehiclePricingSelector = new VehiclePricingSelector();
 
         UserDatabase userDatabase = new UserDatabase();
@@ -70,29 +68,6 @@ public class Main {
                 default:
                     System.out.println(nextCmd[0]+ " Command is not supported.");
             }
-
         }
     }
 }
-
-
-
-
-
-//public class VehicleRentalService{
-//    Set<Branch> branches;
-//    public VehicleRentalService(){
-//        branches = new HashSet<>();
-//    }
-//
-//
-//
-//}
-//
-//public class AddVehicleService{
-//
-//}
-//
-//public class BookingService{
-//
-//}

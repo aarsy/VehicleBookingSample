@@ -11,7 +11,6 @@ public class DynamicVehiclePricingStrategy implements VehiclePricingStrategy {
     }
     @Override
     public Double findPrice(Vehicle vehicle, BookingTimeSlot bookingTimeSlot) {
-        System.out.println("Pricing "+ vehicle.getPrice()+"  "+ dynamicPriceIncreasePercentage);
         double totalCost = (bookingTimeSlot.getEndTime() - bookingTimeSlot.getStartTime()) * vehicle.getPrice();
         return totalCost + ( totalCost * dynamicPriceIncreasePercentage);
     }

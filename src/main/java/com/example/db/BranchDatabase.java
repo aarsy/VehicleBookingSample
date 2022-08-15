@@ -38,7 +38,7 @@ public class BranchDatabase {
      * Onboard a new vehicle in branch
      * ***/
     public boolean createVehicle(Branch branch, Vehicle vehicle) {
-        if(branch == null || !branch.isVehicleTypeSupported(vehicle.getVehicleType()) || branch.isVehicleAlreadyExists(vehicle))
+        if(branch == null || !isBranchExists(branch.getBranchName()) || !branch.isVehicleTypeSupported(vehicle.getVehicleType()) || branch.isVehicleAlreadyExists(vehicle))
             return false;
         branch.addNewVehicle(vehicle);
         return true;

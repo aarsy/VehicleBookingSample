@@ -7,5 +7,5 @@ import com.example.models.Vehicle;
 import java.util.List;
 
 public interface VehicleSelectionStrategy {
-    Vehicle selectVehicleForRider(List<Vehicle> vehicles, User user, BookingTimeSlot bookingTimeSlot);
+    Vehicle selectVehicleForUser(List<Vehicle> vehicles, User user, BookingTimeSlot bookingTimeSlot);
 }

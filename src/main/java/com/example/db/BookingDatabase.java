@@ -2,7 +2,6 @@ package com.example.db;
 
 import com.example.models.*;
 import com.example.strategies.VehiclePricingSelector;
-import com.example.strategies.VehiclePricingStrategy;
 import com.example.strategies.VehicleSelectionStrategy;
 
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ public class BookingDatabase {
         Branch bookingBranch = branchDatabase.getBranch(bookingBranchName);
         int totalVehiclesCount = bookingBranch.getVehicleCount(vehicleType);
         List<Vehicle> availableVehicles = branchDatabase.getAvailableVehiclesForVehicleType(bookingBranch, vehicleType, newBookingSlot);
-        Vehicle vehicle = vehicleSelectionStrategy.selectVehicleForRider(availableVehicles, user, newBookingSlot);
+        Vehicle vehicle = vehicleSelectionStrategy.selectVehicleForUser(availableVehicles, user, newBookingSlot);
         //No available vehicles
         if(vehicle == null)
             return (double) -1;

@@ -7,7 +7,6 @@ public class VehiclePricingSelector {
     private double DYNAMIC_PRICING_THRESHOLD = 0.8;
     private double HIGH_DEMAND_INCREASE_PERCENTAGE = 0.1;
     public VehiclePricingStrategy getVehiclePricingStrategy(String vehicleType, int totalVehicleCount, int availableVehicleCount){
-        System.out.println("Total vehicle count "+totalVehicleCount+"   "+ availableVehicleCount);
         switch (vehicleType.toUpperCase()){
             case "CAR":
                 if((totalVehicleCount - availableVehicleCount)/(double)totalVehicleCount >= DYNAMIC_PRICING_THRESHOLD)

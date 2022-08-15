@@ -10,7 +10,7 @@ import java.util.List;
 
 public class MinimumCostVehicleSelectionStrategy implements VehicleSelectionStrategy{
     @Override
-    public Vehicle selectVehicleForRider(List<Vehicle> vehicles, User user, BookingTimeSlot bookingTimeSlot) {
+    public Vehicle selectVehicleForUser(List<Vehicle> vehicles, User user, BookingTimeSlot bookingTimeSlot) {
         if(vehicles.isEmpty())
             return null;
         vehicles.sort(new MinimumPriceComparator());

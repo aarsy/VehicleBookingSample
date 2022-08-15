@@ -11,6 +11,6 @@ public class MinimumPriceComparator implements Comparator<Vehicle> {
             return 1;
         else if (o1.getPrice() < o2.getPrice())
             return -1;
-        return 0;
+        return o1.getVehicleId().compareTo(o2.getVehicleId());
     }
 }
